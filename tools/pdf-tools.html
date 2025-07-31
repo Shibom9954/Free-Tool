@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Tools - Free Online PDF Converters</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tools"></i>
+            <h1>Free Online Tools</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#" class="active">PDF Tools</a></li>
+                <li><a href="image-tools.html">Image Tools</a></li>
+                <li><a href="office-tools.html">Office Tools</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Powerful PDF Tools</h2>
+                <p>Convert, edit and secure your PDF files with our free online tools</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="tool-container">
+                <div class="tool-box">
+                    <i class="fas fa-file-word"></i>
+                    <h3>DOCX to PDF</h3>
+                    <p>Convert Word documents to PDF format</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                <div class="tool-box">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>PDF to DOCX</h3>
+                    <p>Convert PDF files to editable Word documents</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                <div class="tool-box">
+                    <i class="fas fa-lock"></i>
+                    <h3>Add PDF Password</h3>
+                    <p>Protect your PDF with a password</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                <div id="remove-password-tool" class="tool-modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeTool()">&times;</span>
+                        <h3>Remove PDF Password</h3>
+                        <div class="upload-area" id="pdf-dropzone">
+                            <i class="fas fa-lock-open fa-3x"></i>
+                            <p>Drag & Drop password-protected PDF here</p>
+                            <p>or</p>
+                            <input type="file" id="pdf-upload" accept=".pdf">
+                        </div>
+                        <div id="password-input" style="display:none;margin-top:20px;">
+                            <label>Enter PDF Password:</label>
+                            <input type="password" id="pdf-password" placeholder="Password">
+                            <button id="unlock-btn">Unlock PDF</button>
+                        </div>
+                        <div id="unlock-result" style="display:none;text-align:center;">
+                            <i class="fas fa-check-circle fa-3x" style="color:var(--secondary-color)"></i>
+                            <h4>PDF Unlocked Successfully!</h4>
+                            <a id="download-unlocked" class="download-btn">Download Unlocked PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="docx-to-pdf-tool" class="tool-modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeTool()">&times;</span>
+                        <h3>DOCX to PDF Converter</h3>
+                        <div class="upload-area" id="docx-dropzone">
+                            <i class="fas fa-file-word fa-3x"></i>
+                            <p>Drag & Drop Word document here</p>
+                            <p>or</p>
+                            <input type="file" id="docx-upload" accept=".docx">
+                        </div>
+                        <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.0/mammoth.browser.min.js"></script>
+                        <div id="conversion-options" style="margin-top:20px;display:none;">
+                            <label>
+                                <input type="checkbox" id="preserve-layout"> Preserve original layout
+                            </label>
+                            <button id="convert-btn">Convert to PDF</button>
+                        </div>
+                        <div id="conversion-result" style="display:none;text-align:center;">
+                            <i class="fas fa-file-pdf fa-3x" style="color:var(--primary-color)"></i>
+                            <h4>Conversion Complete!</h4>
+                            <a id="download-pdf" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-box">
+                    <i class="fas fa-unlock"></i>
+                    <h3>Remove PDF Password</h3>
+                    <p>Unlock password-protected PDFs</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                <div class="tool-box">
+                    <i class="fas fa-file-image"></i>
+                    <h3>PDF to Image</h3>
+                    <p>Convert PDF pages to JPG or PNG images</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                <div class="tool-box">
+                    <i class="fas fa-edit"></i>
+                    <h3>PDF Editor</h3>
+                    <p>Edit your PDF files online</p>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Free online tools to make your document work easier.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>support@freeonlinetools.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FreeOnlineTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
